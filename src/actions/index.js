@@ -1,5 +1,6 @@
 export const PLUS_NUM = "PLUS_NUM"
 export const NUM_INPUT = "NUM_INPUT"
+export const CLEAR_INPUT = "CLEAR_INPUT"
 
 export const plusNum = (inputValue, resultValue) => {
 	return {
@@ -15,5 +16,11 @@ export const numInput = (inputValue, number) => {
 		type: NUM_INPUT,
 		inputValue: inputValue,
 		number: number
+	}
+}
+
+export const clearInput = () => {
+	return {
+		type: CLEAR_INPUT
 	}
 }

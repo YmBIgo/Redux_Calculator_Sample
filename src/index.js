@@ -5,7 +5,7 @@ import {Provider} from "react-redux"
 
 import './index.css';
 import reducer from "./reducers"
-import {plusNum, numInput} from "./actions"
+import {plusNum, numInput, clearInput} from "./actions"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

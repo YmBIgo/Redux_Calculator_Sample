@@ -1,8 +1,8 @@
 import React from "react"
 import {useDispatch, useSelector} from "react-redux"
-import {plusNum} from "../actions"
+import {clearInput} from "../actions"
 
-const PlusBtn = () => {
+const ClearBtn = () => {
 	const dispatch = useDispatch()
 	const calculator = useSelector(state => state.calculators)
 	return (
@@ -10,16 +10,14 @@ const PlusBtn = () => {
 			onClick={() => {
 				let inputValueTag = document.getElementsByClassName("inputValue")[0];
 				let resultValueTag = document.getElementsByClassName("resultValue")[0];
-				let inputValue = inputValueTag.innerText
-				let resultValue = resultValueTag.innerText
-				dispatch(plusNum(inputValue, resultValue))
+				dispatch(clearInput())
 				inputValueTag.innerText = 0
-				resultValueTag.innerText = calculator.resultValue
+				resultValueTag.innerText = 0
 			}}
 		>
-			+
+		C
 		</button>
 	)
 }
 
-export default PlusBtn;
+export default ClearBtn;
