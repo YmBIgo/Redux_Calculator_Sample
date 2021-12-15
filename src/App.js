@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import {useDispatch, useSelector} from "react-redux"
+import NumBtn from "./components/NumBtn"
+import PlusBtn from "./components/PlusBtn"
 import './App.css';
 
 function App() {
+
+  const dispatch = useDispatch()
+  const calculator = useSelector(state => state.calculators)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <span>InputValue</span>
+        <p className="inputValue">{calculator.inputValue}</p>
+        <span>ResultValue</span>
+        <p className="resultValue">{calculator.resultValue}</p>
+      </div>
+      <div>
+        <NumBtn number="1" />
+        <NumBtn number="2" />
+        <NumBtn number="3" />
+      </div>
+      <div>
+        <NumBtn number="4" />
+        <NumBtn number="5" />
+        <NumBtn number="6" />
+      </div>
+      <div>
+        <NumBtn number="7" />
+        <NumBtn number="8" />
+        <NumBtn number="9" />
+      </div>
+      <div>
+        <NumBtn number="0" />
+        <PlusBtn />
+      </div>
     </div>
   );
 }

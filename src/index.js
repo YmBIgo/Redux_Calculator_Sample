@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {createStore} from "redux"
+import {Provider} from "react-redux"
+
 import './index.css';
+import reducer from "./reducers"
+import {plusNum, numInput} from "./actions"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const store = createStore(reducer)
+let inputValue = 0; let resultValue = 0;
+store.dispatch(numInput(inputValue, 3))
+console.log(store.getState())
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
