@@ -2,6 +2,7 @@ import {useDispatch, useSelector} from "react-redux"
 import NumBtn from "./components/NumBtn"
 import PlusBtn from "./components/PlusBtn"
 import ClearBtn from "./components/ClearBtn"
+import MinusBtn from "./components/MinusBtn"
 import './App.css';
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
         <NumBtn number="0" />
         <PlusBtn />
         <ClearBtn />
+      </div>
+      <div>
+        <MinusBtn />
       </div>
     </div>
   );

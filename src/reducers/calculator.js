@@ -1,4 +1,4 @@
-import {PLUS_NUM, NUM_INPUT, CLEAR_INPUT} from "../actions"
+import {PLUS_NUM, MINUS_NUM, NUM_INPUT, CLEAR_INPUT} from "../actions"
 
 const initial_value = {resultValue: 0, inputValue: 0}
 
@@ -9,6 +9,11 @@ const calculators = (state=initial_value, action) => {
 			state.resultValue = parseInt(state.resultValue) + parseInt(inputValue)
 			state.inputValue = 0
 			console.log(state)
+			return state
+		case MINUS_NUM:
+			let inputValue_M = action.inputValue;
+			state.resultValue = parseInt(state.resultValue) - parseInt(inputValue_M)
+			state.inputValue = 0
 			return state
 		case NUM_INPUT:
 			let inputNumber = action.number

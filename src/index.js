@@ -5,13 +5,12 @@ import {Provider} from "react-redux"
 
 import './index.css';
 import reducer from "./reducers"
-import {plusNum, numInput, clearInput} from "./actions"
+import {plusNum, minusNum, numInput, clearInput} from "./actions"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const store = createStore(reducer)
 let inputValue = 0; let resultValue = 0;
-store.dispatch(numInput(inputValue, 3))
 console.log(store.getState())
 
 ReactDOM.render(
